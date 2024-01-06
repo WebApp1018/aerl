@@ -1,0 +1,22 @@
+[Unit]
+Description=AERL Hub Telemetry Agent
+Wants=network-online.target
+After=sockets.target network-online.target
+
+StartLimitIntervalSec=300
+StartLimitBurst=10
+
+[Service]
+EnvironmentFile=/etc/default/hubd
+ExecStart=/usr/bin/hubd
+Restart=always
+RestartSec=15
+RuntimeDirectory=hubd
+RuntimeDirectoryMode=0700
+StateDirectory=hubd
+StateDirectoryMode=0700
+CacheDirectory=hubd
+CacheDirectoryMode=0700
+
+[Install]
+WantedBy=multi-user.target

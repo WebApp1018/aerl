@@ -1,0 +1,48 @@
+version: "3"
+
+volumes:
+  grafana:
+
+networks:
+  mimir:
+  loki:
+  nats:
+
+services:
+  # Grafana Data visualisation
+  grafana:
+    container_name: grafana-aerl-cloud
+    image: grafana/grafana:latest
+    restart: always
+    ports:
+      - 3003:3000
+    volumes:
+      - grafana:/var/lib/grafana
+    networks:
+      - mimir
+      - loki
+
+  # Grafana Mimir
+  mimir:
+    container_name: mimir-aerl-cloud
+    image: grafana/mimir:latest
+    command: --config.file=/etc/mimir/local.yaml
+    restart: always
+    ports:
+      - 8080:8080
+    volumes:
+      - "./mimir/local.yaml:/etc/mimir/local.yaml"
+    networks:
+      - mimir
+
+  # NATS/Jetstream
+  nats:
+    container_name: nats-aerl-cloud
+    image: nats:latest
+    command: -js
+    ports:
+      - 4222:4222
+      - 6222:6222
+      - 8222:8222
+    networks:
+        - nats

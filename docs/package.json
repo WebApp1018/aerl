@@ -1,0 +1,24 @@
+{
+  "name": "docs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.15",
+    "framer-motion": "^10.16.2",
+    "next": "^13.0.6",
+    "nextra": "^2.13.2",
+    "nextra-theme-docs": "^2.8.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.7",
+    "remark-gfm": "^3.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.0",
+    "typescript": "^5.2.2"
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "title": "Interface",
+  "description": "Modbus interface configuration",
+  "oneOf": [
+    {
+      "title": "tcp",
+      "$ref": "#/$defs/tcp"
+    },
+    {
+      "title": "rtu",
+      "$ref": "#/$defs/rtu"
+    }
+  ],
+  "$defs": {
+    "rtu": {
+      "type": "object",
+      "description": "Serial interface connection",
+      "properties": {
+        "path": {
+          "description": "Device path",
+          "type": "string"
+        },
+        "baud_rate": {
+          "description": "Baud rate",
+          "type": "integer"
+        },
+        "data_bits": {
+          "description": "Data bits",
+          "type": "integer"
+        },
+        "stop_bits": {
+          "$ref": "#/$defs/stop_bits"
+        },
+        "parity": {
+          "$ref": "#/$defs/parity"
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "baud_rate",
+        "data_bits",
+        "stop_bits",
+        "parity"
+      ]
+    },
+    "tcp": {
+      "type": "object",
+      "description": "TCP interface connection",
+      "properties": {
+        "address": {
+          "type": "string",
+          "format": "ipv4"
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "address",
+        "port"
+      ]
+    },
+    "stop_bits": {
+      "description": "Data bits",
+      "type": "number",
+      "enum": [
+        1,
+        1.5,
+        2
+      ]
+    },
+    "parity": {
+      "type": "string",
+      "enum": [
+        "even",
+        "odd",
+        "none"
+      ]
+    }
+  }
+}

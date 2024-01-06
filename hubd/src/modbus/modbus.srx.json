@@ -1,0 +1,112 @@
+{
+  "metadata": {
+    "manufacturer": "aerl",
+    "product": "srx",
+    "version": "1"
+  },
+  "defaults": {
+    "slave_id": 20,
+    "baud_rate": 9600,
+    "data_bits": 8,
+    "stop_bits": 1,
+    "parity": "none"
+  },
+  "registers": [
+    {
+      "address": 10001,
+      "name": "generic_hardware_fault"
+    },
+    {
+      "address": 10002,
+      "name": "device_not_configured"
+    },
+    {
+      "address": 10003,
+      "name": "set_points_out_of_bounds"
+    },
+    {
+      "address": 10004,
+      "name": "battery_sense_not_detected"
+    },
+    {
+      "address": 10005,
+      "name": "canbus_master_lost"
+    },
+    {
+      "address": 10006,
+      "name": "high_internal_temperature"
+    },
+    {
+      "address": 10007,
+      "name": "low_input_voltage"
+    },
+    {
+      "address": 10008,
+      "name": "low_output_voltage"
+    },
+    {
+      "address": 10009,
+      "name": "high_output_voltage"
+    },
+    {
+      "address": 10010,
+      "name": "high_input_voltage"
+    },
+    {
+      "address": 10011,
+      "name": "high_input_current"
+    },
+    {
+      "address": 10012,
+      "name": "high_battery_temperature"
+    },
+    {
+      "address": 10013,
+      "name": "low_battery_temperature"
+    },
+    {
+      "address": 10014,
+      "name": "earth_fault_postiive"
+    },
+    {
+      "address": 10015,
+      "name": "earth_fault_negative"
+    },
+    {
+      "address": 10016,
+      "name": "active_cooling_fault"
+    },
+    {
+      "address": 30001,
+      "name": "product_id_char0"
+    },
+    {
+      "address": 30002,
+      "name": "product_id_char1"
+    },
+    {
+      "address": 30003,
+      "name": "product_id_char2"
+    },
+    {
+      "address": 30004,
+      "name": "product_id_char3"
+    },
+    {
+      "address": 30005,
+      "name": "serial_number_char0"
+    },
+    {
+      "address": 30006,
+      "name": "serial_number_char1"
+    },
+    {
+      "address": 30007,
+      "name": "serial_number_char2"
+    },
+    {
+      "address": 30008,
+      "name": "serial_number_char3"
+    }
+  ]
+}

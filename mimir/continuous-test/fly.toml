@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for mimir-continuous-test-aerl-cloud on 2023-08-31T15:54:24+10:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "mimir-continuous-test-aerl-cloud"
+primary_region = "syd"
+
+[build]
+  image = "grafana/mimir-continuous-test:latest"
+
+[[services]]
+  internal_port = 9900
+  protocol = "tcp"
+
+[metrics]
+  port = 9900
+  path = "/metrics"
+
+[experimental]
+  cmd = [
+    "-tests.read-endpoint=http://mimir-aerl-cloud.internal:8080/prometheus",
+    "-tests.write-endpoint=http://mimir-aerl-cloud.internal:8080",
+    "-tests.write-read-series-test.num-series=100",
+    "-tests.write-batch-size=100",
+    "-tests.run-interval=5m0s"
+]

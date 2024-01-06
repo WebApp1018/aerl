@@ -1,0 +1,52 @@
+.recaptcha {
+  margin: auto;
+  border-radius: 3px;
+  width: 302px;
+  height: 76px;
+  overflow: hidden;
+}
+.invite-dropdown .nextui-dropdown-button[aria-expanded="true"] {
+  border: 1px solid #fff !important;
+}
+@media screen and (max-width: 371px) {
+  .recaptcha {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .signup-btn {
+    margin-top: 75px;
+  }
+}
+@media screen and (max-width: 1240px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.97);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.97);
+  }
+}
+@media screen and (max-width: 960px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.95);
+  }
+}
+@media screen and (max-width: 568px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.93);
+  }
+}
+@media screen and (max-width: 420px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.92);
+  }
+}
+@media screen and (max-width: 360px) {
+  .nextui-c-PJLV-ijiEjfx-css {
+    transform: scaleX(0.9);
+  }
+}

@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package modbus;
+
+import "google/protobuf/timestamp.proto";
+
+message Frame {
+    google.protobuf.Timestamp time = 1;
+    string interface = 2;
+    uint32 slave_address = 3;
+    uint32 register_address = 4;
+    uint32 data = 5;
+}
+
+message Payload {
+    repeated Frame frames = 1;
+}

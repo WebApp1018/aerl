@@ -1,0 +1,29 @@
+{
+	"nodes":[
+		{"id":"bf9f2637d5977354","type":"group","x":-740,"y":-180,"width":540,"height":240,"label":"Asset Management & Security"},
+		{"id":"bd9d49c3b9df5142","type":"group","x":-1080,"y":-180,"width":300,"height":240,"label":"Telemetry, Alerts, Events"},
+		{"id":"eae6db5d2124b656","type":"group","x":-160,"y":-180,"width":300,"height":240,"label":"Command & Control"},
+		{"id":"1ffde4c0cd0be112","type":"text","text":"Clustered Distributed Streaming","x":-1080,"y":100,"width":1220,"height":60},
+		{"id":"c1224344d172e29b","type":"text","text":"Time-series Database","x":-1060,"y":-150,"width":250,"height":60},
+		{"id":"7291d8024dc570e0","type":"text","text":"Ingester Pipeline","x":-1060,"y":-40,"width":250,"height":60},
+		{"id":"5f0bf50172c019ec","type":"text","text":"Edge Devices","x":-1080,"y":440,"width":360,"height":60},
+		{"id":"72f05a9f23a3e98c","type":"text","text":"ACLs","x":-720,"y":-40,"width":140,"height":60},
+		{"id":"69ac5bd18f7104e0","type":"text","text":"Database","x":-720,"y":-150,"width":240,"height":60},
+		{"id":"83f3ca797d685adb","type":"text","text":"Crypto","x":-560,"y":-40,"width":140,"height":60},
+		{"id":"585fa027db08d35b","type":"text","text":"Integrations","x":-220,"y":440,"width":360,"height":60},
+		{"id":"9882ff5b7d43f49e","type":"text","text":"Applications","x":-700,"y":440,"width":460,"height":60},
+		{"id":"26619b764793ebbd","type":"text","text":"Durable Execution","x":-140,"y":-40,"width":250,"height":60},
+		{"id":"67cb41723d33f223","type":"text","text":"Database","x":-140,"y":-150,"width":250,"height":60},
+		{"id":"8a1278076b2a950f","type":"text","text":"Authentication","x":-400,"y":-40,"width":180,"height":60},
+		{"id":"e887b3655c9e713f","type":"text","text":"Edge API","x":-1080,"y":220,"width":1220,"height":50}
+	],
+	"edges":[
+		{"id":"729c17465bad462d","fromNode":"e887b3655c9e713f","fromSide":"top","toNode":"1ffde4c0cd0be112","toSide":"bottom","fromEnd":"arrow"},
+		{"id":"62db88c2673cd917","fromNode":"5f0bf50172c019ec","fromSide":"top","toNode":"e887b3655c9e713f","toSide":"bottom","fromEnd":"arrow"},
+		{"id":"4cff72dd9e3375fb","fromNode":"9882ff5b7d43f49e","fromSide":"top","toNode":"e887b3655c9e713f","toSide":"bottom","fromEnd":"arrow"},
+		{"id":"a078861c921cb3e9","fromNode":"585fa027db08d35b","fromSide":"top","toNode":"e887b3655c9e713f","toSide":"bottom","fromEnd":"arrow"},
+		{"id":"3268d36204298b48","fromNode":"e887b3655c9e713f","fromSide":"top","toNode":"bf9f2637d5977354","toSide":"bottom"},
+		{"id":"813d4c26634854a8","fromNode":"e887b3655c9e713f","fromSide":"top","toNode":"bd9d49c3b9df5142","toSide":"bottom"},
+		{"id":"185d53d3156c7756","fromNode":"e887b3655c9e713f","fromSide":"top","toNode":"eae6db5d2124b656","toSide":"bottom"}
+	]
+}

@@ -1,0 +1,128 @@
+VERSION ""
+
+NS_ :
+		NS_DESC_
+		CM_
+		BA_DEF_
+		BA_
+		VAL_
+		CAT_DEF_
+		CAT_
+		FILTER
+		BA_DEF_DEF_
+		EV_DATA_
+		ENVVAR_DATA_
+		SGTYPE_
+		SGTYPE_VAL_
+		BA_DEF_SGTYPE_
+		BA_SGTYPE_
+		SIG_TYPE_REF_
+		VAL_TABLE_
+		SIG_GROUP_
+		SIG_VALTYPE_
+		SIGTYPE_VALTYPE_
+		BO_TX_BU_
+		BA_DEF_REL_
+		BA_REL_
+		BA_DEF_DEF_REL_
+		BU_SG_REL_
+		BU_EV_REL_
+		BU_BO_REL_
+		SG_MUL_VAL_
+
+BS_:
+
+BU_:
+
+BO_ 0 aerl_srx_information: 8 Vector__XXX
+	SG_ serial_number : 32|32@1+ (1,0) [0|4294967295] "#" Vector__XXX
+	SG_ status : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 1 aerl_srx_pv: 8 Vector__XXX
+	SG_ voltage : 0|32@1+ (0.001,0) [0|4294967295] "V" Vector__XXX
+	SG_ current : 32|32@1+ (0.001,0) [0|4294967295] "A" Vector__XXX
+
+
+BO_ 2 aerl_srx_output: 8 Vector__XXX
+	SG_ voltage : 0|32@1+ (0.001,0) [0|4294967295] "V" Vector__XXX
+	SG_ current : 32|32@1+ (0.001,0) [0|4294967295] "A" Vector__XXX
+
+BO_ 4 aerl_srx_temperature: 8 Vector__XXX
+	SG_ heatsink : 32|32@1+ (0.001,0) [0|0] "C" Vector__XXX
+
+BO_ 5 aerl_srx_flag: 8 Vector__XXX
+    SG_ hardware_fault_generic : 0|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ no_config_data : 1|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ config_data_out_of_range : 2|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ battery_sense_lost : 3|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ can_master_lost : 4|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ vin_low_fault : 6|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ vout_low_fault : 7|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ vout_high_fault : 8|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ vin_high_fault : 9|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ over_temp_fault : 11|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ active_cooling_fault : 15|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ iout_high_fault : 16|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ iin_high_fault : 17|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ cross_check_fault : 18|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ temp_sensor_timeout : 19|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ earth_fault : 20|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ no_output_fault : 21|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ low_bat_temp_cutoff : 22|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ high_bat_temp_cutoff : 23|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ current_flow_disrupted : 24|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+    SG_ pre_charge_failure : 25|1@1+ (1,0) [0|1] "Boolean" Vector__XXX
+
+BO_ 10 aerl_srx_hardware_information: 8 Vector__XXX
+    SG_ device_type : 0|16@1+ (1,0) [0|65535] "" Vector__XXX
+    SG_ menufacturer_id : 16|16@1+ (1,0) [0|65535] "" Vector__XXX
+    SG_ batch_id : 32|16@1+ (1,0) [0|65535] "" Vector__XXX
+    SG_ hardware_revision : 48|16@1+ (1,0) [0|65535] "" Vector__XXX
+
+BO_ 10 aerl_srx_firmware: 8 Vector__XXX
+    SG_ version : 0|32@1+ (1,0) [0|4294967295] "" Vector__XXX
+
+BO_ 33 aerl_srx_set_time: 8 Vector__XXX
+	SG_ date : 0|32@1+ (1,0) [0|0] "Date" Vector__XXX
+	SG_ time : 32|32@1+ (1,0) [0|0] "Time" Vector__XXX
+
+BO_ 34 aerl_srx_enable: 8 Vector__XXX
+	SG_ type : 0|64@1+ (1,0) [0|0] "Send 'ALL’ or 'RCO' as a string – e.g., (“ALL00000”)" Vector__XXX
+
+BO_ 35 aerl_srx_reset: 0 Vector__XXX
+
+BO_ 36 aerl_srx_shutdown: 0 Vector__XXX
+
+BO_ 37 aerl_srx_power_target: 8 Vector__XXX
+	SG_ voltage : 0|32@1+ (1,0) [0|4294967295] "mV" Vector__XXX
+	SG_ current : 32|32@1+ (1,0) [0|4294967295] "mA" Vector__XXX
+
+CM_ BO_ 0 "Identification Information";
+CM_ SG_ 0 serial_number "Device serial number, allocated at manufacture.";
+CM_ BO_ 1 "PV Voltage/Current Measurement";
+CM_ BO_ 2 "Output Voltage/Current Measurement";
+CM_ SG_ 2 voltage "Output Voltage";
+CM_ SG_ 2 current "Output Current";
+CM_ BO_ 4 "PV Power/Battery Temperature Measurement";
+CM_ SG_ 4 pv_power "PV Power";
+CM_ SG_ 4 batter_temperature "Battery Temperature (Currently Unused)";
+CM_ BO_ 5 "Active Flags - Faults";
+CM_ SG_ 5 vout_low_fault "Low Output Voltage Fault";
+CM_ SG_ 5 vin_low_fault "Low Input Voltage Fault";
+CM_ SG_ 5 vout_high_fault "High Output Voltage Fault";
+CM_ SG_ 5 vin_high_fault "High Input Voltage Fault";
+CM_ SG_ 5 iout_fault "High Output Current Fault";
+CM_ SG_ 5 iin_fault "High Input Current Fault";
+CM_ SG_ 5 over_temperature_fault "Overtemperature Fault";
+CM_ SG_ 5 hardware_fault "Generic Hardware Fault";
+CM_ BO_ 33 "Set Time Command";
+CM_ SG_ 33 date "Day-Month-Year Format - e.g. (“010121”) 1st of January, 2021";
+CM_ SG_ 33 time "24 Hour Time - e.g. (“203010”) 8:30:10 PM";
+CM_ BO_ 34 "Enable Command";
+CM_ BO_ 35 "Reset Command";
+CM_ BO_ 36 "Shutdown Command";
+CM_ BO_ 37 "Power Target Commands";
+CM_ SG_ 37 current "Maximum Output Current (mA) - e.g., 70000";
+CM_ SG_ 37 voltage "Output Voltage Target (mV) - e.g., 57600";
+
+VAL_ 0 status 6 "Fault Detected (Shutdown)" 4 "Output Disabled" 2 "Output Enabled" 0 "Slave Un-Assigned";

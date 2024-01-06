@@ -1,0 +1,27 @@
+# fly.toml app configuration file generated for cnsmr-aerl-cloud on 2023-04-29T02:24:11+10:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "cnsmr-aerl-cloud"
+primary_region = "syd"
+
+[deploy]
+  strategy = "rolling"
+
+[env]
+  MIMIR_URL = "http://mimir-aerl-cloud.internal:8080"
+  NATS_URL = "nats://nats-aerl-cloud.internal:4222"
+  SUPABASE_URL = "https://sb.aerl.cloud"
+
+[experimental]
+  auto_rollback = true
+
+[http_service]
+  internal_port = 9091
+  auto_stop_machines = false
+  min_machines_running = 1
+
+[metrics]
+  port = 9091
+  path = "/metrics"

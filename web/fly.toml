@@ -1,0 +1,34 @@
+app = "web-aerl-cloud"
+primary_region = "syd"
+kill_timeout = "10s"
+
+[build.args]
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16eW51ZnV0aHZnaHFhbmxrbHVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5NjkwODUsImV4cCI6MTk5NTU0NTA4NX0.asrx4K_0O9wClwLgcN9W61ab6cOTJqYmiW194mlR4zk"
+  NEXT_PUBLIC_BOUNDARY_URL = "https://api.aerl.cloud"
+  NEXT_PUBLIC_SUPABASE_URL = "https://sb.aerl.cloud"
+
+[env]
+  NEXT_PUBLIC_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im16eW51ZnV0aHZnaHFhbmxrbHVmIiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzk5NjkwODUsImV4cCI6MTk5NTU0NTA4NX0.asrx4K_0O9wClwLgcN9W61ab6cOTJqYmiW194mlR4zk"
+  NEXT_PUBLIC_BOUNDARY_URL = "https://api.aerl.cloud"
+  NEXT_PUBLIC_SUPABASE_URL = "https://sb.aerl.cloud"
+
+[deploy]
+  strategy = "bluegreen"
+
+[http_service]
+  internal_port = 3000
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 2
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 500
+    soft_limit = 300
+
+  [[http_service.checks]]
+    interval = "10s"
+    timeout = "10s"
+    grace_period = "5s"
+    method = "GET"
+    path = "/health"

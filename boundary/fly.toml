@@ -1,0 +1,49 @@
+# fly.toml app configuration file generated for boundary-aerl-cloud on 2023-05-12T12:01:21+10:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "boundary-aerl-cloud"
+primary_region = "syd"
+kill_signal = "SIGINT"
+kill_timeout = "5s"
+
+[env]
+  MIMIR_URL = "http://mimir-aerl-cloud.internal:8080"
+  NATS_URL = "nats://nats-aerl-cloud.internal:4222"
+  SUPABASE_URL = "https://sb.aerl.cloud"
+
+[[services]]
+  protocol = "tcp"
+  internal_port = 3030
+  processes = ["app"]
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+    force_https = true
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
+  [services.concurrency]
+    type = "connections"
+    hard_limit = 500
+    soft_limit = 300
+
+[checks]
+  [checks.ready]
+  grace_period = "5s"
+  interval = "15s"
+  method = "get"
+  path = "/ready"
+  port = 9091
+  timeout = "10s"
+  type = "http"
+
+[metrics]
+  port = 9091
+  path = "/metrics"
+
+[experimental]
+  auto_rollback = true

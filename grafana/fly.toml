@@ -1,0 +1,13 @@
+app = "grafana-aerl-cloud"
+primary_region = "syd"
+kill_timeout = 10
+
+[env]
+
+[mount]
+  source = "grafana"
+  destination = "/var/lib/grafana"
+
+[http_service]
+  internal_port = 3000
+  force_https = true

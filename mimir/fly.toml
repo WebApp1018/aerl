@@ -1,0 +1,54 @@
+# fly.toml app configuration file generated for mimir-aerl-cloud on 2023-05-08T15:15:46+10:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "mimir-aerl-cloud"
+primary_region = "syd"
+
+kill_signal = "SIGTERM"
+kill_timeout = "30s"
+
+swap_size_mb = 3072
+
+[build]
+  dockerfile = "Dockerfile"
+
+[env]
+  GOMEMLIMIT = "3072MiB"
+
+  CONSUL_URL = "https://consul-syd-4.fly-shared.net"
+  CONSUL_PREFIX = "mimir-aerl-cloud-yexkqwom6j61m38d/"
+
+  REDIS_USERNAME = "default"
+  REDIS_HOST = "fly-mimir-aerl-cloud.upstash.io:6379"
+
+  S3_BUCKET_NAME = "aerl-cloud-mimir"
+  S3_ENDPOINT = "4d940b8000140e116b8fccc826bea42b.r2.cloudflarestorage.com"
+  S3_ACCESS_KEY_ID = "fc3771134841e7e69b32f06debd194fa"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+[metrics]
+  path = "/metrics"
+  port = 8080
+
+[mounts]
+  source="mimir_data"
+  destination="/data"
+
+[checks]
+  [checks.ready]
+  grace_period = "10s"
+  interval = "5s"
+  method = "get"
+  path = "/ready"
+  port = 8080
+  timeout = "5s"
+  type = "http"
+
+[experimental]
+  enable_consul = true
+  enable_rollback = true

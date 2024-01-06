@@ -1,0 +1,30 @@
+[package]
+name = "cnsmr"
+version = "0.1.6"
+edition = "2021"
+
+[dependencies]
+env_logger = "0.10.0"
+futures = "0.3"
+log = "0.4.17"
+serde = { version = "1.0.158", features = ["derive"] }
+serde_json = "1.0.94"
+tokio = { version = "1.0", features = ["full"] }
+reqwest = "0.11.15"
+can-dbc = "5.0.0"
+clap = { version = "4.1.13", features = ["derive", "env"] }
+postgrest = "1.5.0"
+lazy_static = "1.4.0"
+prometheus = { version = "0.13.3", features = ["push"] }
+anyhow = "1.0.71"
+prost = "0.12.0"
+prost-types = "0.12.0"
+http = "1.0.0"
+snap = "1.1.0"
+typify = "0.0.14"
+async-nats = "0.33.0"
+axum = "0.7.2"
+metrics = "0.21.1"
+
+[build-dependencies]
+prost-build = "0.12.0"

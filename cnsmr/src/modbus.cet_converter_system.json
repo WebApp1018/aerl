@@ -1,0 +1,64 @@
+{
+  "metadata": {
+    "product": "converter_system",
+    "manufacturer": "cet",
+    "version": "1"
+  },
+  "defaults": {
+    "slave_id": 31,
+    "baud_rate": 9600,
+    "data_bits": 8,
+    "stop_bits": 1,
+    "parity": "none"
+  },
+  "registers": [
+    {
+      "address": 30100,
+      "name": "group0_voltage",
+      "description": "Voltage measurement group 0.",
+      "factor": 0.1
+    },
+    {
+      "address": 30101,
+      "name": "group0_current",
+      "description": "Current in amperes group 0.",
+      "factor": 0.1
+    },
+    {
+      "address": 30102,
+      "name": "group0_power_active",
+      "description": "Current in amperes group 0.",
+      "factor": 10
+    },
+    {
+      "address": 30103,
+      "name": "group0_power_apparent",
+      "description": "Current in amperes group 0.",
+      "factor": 10
+    },
+    {
+      "address": 30120,
+      "name": "phase1_voltage",
+      "description": "Voltage measurement group 1.",
+      "factor": 0.1
+    },
+    {
+      "address": 30121,
+      "name": "phase1_current",
+      "description": "Current measurement group 1.",
+      "factor": 0.1
+    },
+    {
+      "address": 30122,
+      "name": "phase1_power_active",
+      "description": "Active power measurement group 1.",
+      "factor": 100
+    },
+    {
+      "address": 30123,
+      "name": "phase1_power_apparent",
+      "description": "Apparent power measurement group 1.",
+      "factor": 100
+    }
+  ]
+}

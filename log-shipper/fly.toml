@@ -1,0 +1,16 @@
+app = "log-shipper-aerl-cloud"
+primary_region = "syd"
+
+[build]
+  image = "ghcr.io/superfly/fly-log-shipper:latest"
+
+[env]
+  ORG = "aerl"
+
+[[services]]
+  http_checks = []
+  internal_port = 8686
+
+[metrics]
+  port = 9598
+  path = "/metrics"

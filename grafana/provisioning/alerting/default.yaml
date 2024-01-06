@@ -1,0 +1,11 @@
+apiVersion: 1
+
+contactPoints:
+  - name: On-Call
+    receivers:
+      - uid: slack-alerts
+        type: slack
+        settings:
+          recipient: notifications
+          url: ${SLACK_NOTIFICATIONS_WEBHOOK}
+          username: Grafana

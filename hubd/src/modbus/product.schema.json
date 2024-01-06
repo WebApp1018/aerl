@@ -1,0 +1,58 @@
+{
+  "title": "Product",
+  "description": "Product descriptor",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "description": "Metadata labels",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "registers": {
+      "description": "Register definitions",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/register"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "registers"
+  ],
+  "$defs": {
+    "register": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "description": "Register address",
+          "type": "integer"
+        },
+        "name": {
+          "description": "Register name",
+          "type": "string"
+        },
+        "description": {
+          "description": "Register description",
+          "type": "string"
+        },
+        "factor": {
+          "description": "Value scaling factor",
+          "type": "number",
+          "default": 1
+        },
+        "offset": {
+          "description": "Value offset",
+          "type": "number",
+          "default": 0
+        }
+      },
+      "required": [
+        "address",
+        "name"
+      ]
+    }
+  }
+}

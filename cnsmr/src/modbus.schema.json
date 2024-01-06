@@ -1,0 +1,117 @@
+{
+  "title": "Modbus Device",
+  "description": "Device description",
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "description": "Metadata labels",
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "defaults": {
+      "$ref": "#/$defs/defaults"
+    },
+    "registers": {
+      "description": "Register definitions",
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/register"
+      },
+      "uniqueItems": true
+    }
+  },
+  "required": [
+    "metadata",
+    "defaults",
+    "registers"
+  ],
+  "$defs": {
+    "defaults": {
+      "description": "Configuration defaults",
+      "type": "object",
+      "properties": {
+        "slave_id": {
+          "description": "Default slave address",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 255
+        },
+        "baud_rate": {
+          "description": "Default baud rate",
+          "type": "integer",
+          "default": 115200
+        },
+        "data_bits": {
+          "description": "Default data bits",
+          "type": "integer",
+          "default": 8
+        },
+        "stop_bits": {
+          "$ref": "#/$defs/stop_bits"
+        },
+        "parity": {
+          "$ref": "#/$defs/parity"
+        }
+      },
+      "required": [
+        "slave_id",
+        "baud_rate",
+        "data_bits",
+        "stop_bits",
+        "parity"
+      ]
+    },
+    "stop_bits": {
+      "description": "Default data bits",
+      "type": "number",
+      "enum": [
+        1,
+        1.5,
+        2
+      ],
+      "default": 1
+    },
+    "parity": {
+      "type": "string",
+      "enum": [
+        "even",
+        "odd",
+        "none"
+      ],
+      "default": "none"
+    },
+    "register": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "description": "Register address",
+          "type": "integer"
+        },
+        "name": {
+          "description": "Register name",
+          "type": "string"
+        },
+        "description": {
+          "description": "Register description",
+          "type": "string"
+        },
+        "factor": {
+          "description": "Value scaling factor",
+          "type": "number",
+          "default": 1
+        },
+        "offset": {
+          "description": "Value offset",
+          "type": "number",
+          "default": 0
+        }
+      },
+      "required": [
+        "address",
+        "name"
+      ]
+    }
+  }
+}

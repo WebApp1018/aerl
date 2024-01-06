@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"95cebb8efe0bac96","type":"group","x":40,"y":-280,"width":400,"height":500,"label":"Isolated Comms"},
+		{"id":"a703308f46e68762","type":"group","x":-400,"y":40,"width":400,"height":340,"label":"Misc"},
+		{"id":"daf78a98bdfdb99f","type":"group","x":-400,"y":-280,"width":400,"height":260,"label":"Compute Module"},
+		{"id":"4e6fec32206b2660","type":"group","x":40,"y":280,"width":400,"height":100,"label":"Power"},
+		{"id":"f10ecbe0831f69f9","type":"text","text":"Applications Processor","x":-380,"y":-260,"width":250,"height":60},
+		{"id":"bcf52e1749a0d3ed","type":"text","text":"Realtime Processor","x":-380,"y":-180,"width":250,"height":60},
+		{"id":"ec9f0387cb607284","type":"text","text":"Flash Storage","x":-380,"y":-100,"width":250,"height":60},
+		{"id":"4c40871cb4f325fa","type":"text","text":"SD Card","x":-380,"y":60,"width":250,"height":60},
+		{"id":"43938e6c6c745856","type":"text","text":"SIM","x":-380,"y":140,"width":250,"height":60},
+		{"id":"2079461d6341e5f7","type":"text","text":"4G/LTE Modem","x":-380,"y":220,"width":250,"height":60},
+		{"id":"d43fd21b322cbf3c","type":"text","text":"USB OTG","x":-380,"y":300,"width":250,"height":60},
+		{"id":"6587464eef464bfc","type":"text","text":"Ethernet (x2)","x":60,"y":-260,"width":250,"height":60},
+		{"id":"09cefe676474bd52","type":"text","text":"RS485","x":60,"y":-180,"width":250,"height":60},
+		{"id":"5ed81be6351ac161","type":"text","text":"CAN Bus (CAN-FD) (x2)","x":60,"y":-100,"width":250,"height":60},
+		{"id":"61661dcf214c5329","type":"text","text":"Signal Output (x4)","x":60,"y":-20,"width":250,"height":60},
+		{"id":"6c6fd71af4595817","type":"text","text":"Isolated Power Input","x":60,"y":300,"width":250,"height":60},
+		{"id":"d2fd712fba6d0bf4","type":"text","text":"Alarm Input","x":60,"y":140,"width":250,"height":60},
+		{"id":"2604496805949d95","type":"text","text":"Signal Input (x2)","x":60,"y":60,"width":250,"height":60}
+	],
+	"edges":[]
+}

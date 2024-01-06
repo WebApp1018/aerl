@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package canbus;
+
+import "google/protobuf/timestamp.proto";
+
+message Frame {
+    google.protobuf.Timestamp time = 1;
+    string interface = 2;
+    uint32 id = 3;
+    bool extended = 4;
+    bool error = 5;
+    bool rtr = 6;
+    bytes data = 7;
+}
+
+message Payload {
+    repeated Frame frames = 1;
+}

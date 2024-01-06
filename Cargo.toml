@@ -1,0 +1,14 @@
+[workspace]
+
+resolver = "2"
+
+members = [
+	"hubd",
+	"cnsmr",
+	"boundary",
+]
+
+exclude = [
+	"vendor/loki-client-rs",
+	"test-harness",
+]
